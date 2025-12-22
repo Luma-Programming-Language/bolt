@@ -1,0 +1,42 @@
+@module "main"
+
+@use "string" as STRING
+@use "io" as IO
+
+// USE DEFAULTS FOR EVERYTHING FOR NOW.
+pub const main -> fn () int {
+    // ask for Project name
+    let project_name: *byte = "project";
+    // ask for initial version for project
+    let starting_version: str = "0.1.0";
+    // ask for description
+    let description: str = "This is a basic description";
+    // ask for licence
+    let licence: str = "MIT";
+    // ask for lowest luma version to use
+    let version: str = "v0.1.6";
+    // assume installed system wide
+
+    // By default link against core libs lib/[io.lx, string.lx, memory.lx, sys.lx]
+    let prefix: str = "lib/";
+    let defaults: *str = ["io.lx", "string.lx", "memory.lx", "sys.lx"];
+
+    // Make the project dir
+    let make_root_command: *byte = cast<*byte>(alloc(64));
+    defer { free(make_root_command); }
+
+    STRING::cat(make_root_command, "mkdir -p ", project_name);
+
+    if (cast<int>(system(make_root_command)) != 0) {
+       IO::print_str("Something prevented %s from being created\n", [project_name]);
+       return 1;
+    }
+    else {
+           IO::print_str("Created %s", [project_name]);
+    }
+
+    // move to project folder to populate with stuff.
+    system("project");
+
+    system("touch build.bolt")
+}
