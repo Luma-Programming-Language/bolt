@@ -2,7 +2,7 @@
 
 Bolt works by building through scripts.
 
-The goal to to allow for complex building requirements (Ecosystem, conditionals, events).
+The goal to to *allow* for complex building requirements (Ecosystem, conditionals, events).
 
 Bolt is essientally another language. Works similar to Premake.
 
