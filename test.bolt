@@ -1,0 +1,59 @@
+// Simple program with proper type handling
+class MathOperations {
+  init() {
+    this.multiplier = 2;
+  }
+
+  double(number) {
+    return number * this.multiplier;  // Both numbers
+  }
+
+  addNumbers(a, b) {
+    return a + b;  // Both numbers
+  }
+}
+
+class Greeter {
+  init(name) {
+    this.name = name;
+    this.greeting = "Hello";
+  }
+
+  sayHello() {
+    var message = this.greeting + ", " + this.name + "!";  // All strings
+    print message;
+  }
+
+  formalGreeting(title) {
+    var formal = "Good day, " + title + " " + this.name + ".";  // All strings
+    print formal;
+  }
+}
+
+// Using number operations
+var math = MathOperations();
+var result1 = math.double(5);
+print result1;  // 10
+
+var result2 = math.addNumbers(3, 7);
+print result2;  // 10
+
+// Using string operations
+var greeter = Greeter("Alice");
+greeter.sayHello();        // Hello, Alice!
+
+var formalGreeter = Greeter("Smith");
+formalGreeter.formalGreeting("Dr.");  // Good day, Dr. Smith.
+
+// Valid comparisons (same types)
+var x = 5;
+var y = 10;
+if (x < y) {              // Both numbers
+  print "x is smaller";
+}
+
+var name1 = "Alice";
+var name2 = "Bob";
+if (name1 != name2) {     // Both strings
+  print "Names are different";
+}

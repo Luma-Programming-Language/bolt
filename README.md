@@ -1,11 +1,15 @@
-# bolt
-Bolt is the build system for luma
+# Bolt
 
-## bolt build
-Carries out verification and then builds the project.
+Bolt works by building through scripts.
 
-## bolt pm
-Provides package management and verification to deps.
+The goal to to allow for complex building requirements (Ecosystem, conditionals, events).
 
-## bolt init
-Read setup scripts, setup projects.
+Bolt is essientally another language. Works similar to Premake.
+
+## You *can* use scripts for everything.
+1. Setting up project templates for your framework.
+2. Setting up how a project should build based on archetecture.
+3. Setting what server to request packages from, should a package be checked, when and how? (solves problems with packages becoming vulnerable).
+
+# Final note
+The goal is to provide a simple way of building that can become complex as long as a requirement requires that complexity
